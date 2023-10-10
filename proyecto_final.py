@@ -102,11 +102,11 @@ for x, i in enumerate(prices):
 
 print("----------------------------")
 sumatoria = sum(subtotal)
-subtotal1 = int(sumatoria)
+subtotal1 = float(sumatoria)
 vriva = (sumatoria * float(iva)) - sumatoria
-iva1 = int(vriva)
+iva1 = float(vriva)
 total_con_iva = sumatoria * float(iva)
-total1 = int(total_con_iva)
+total1 = float(total_con_iva)
 print("Subtotal           |", subtotal1)
 print("IVA                |", iva1)
 print("Total              |", total1)
@@ -126,18 +126,8 @@ print(cursor.rowcount, "Registro ingresado")
 try:
     cursor.execute("SELECT id_cotizacion,nit,nombre,direccion,ciudad,telefono,correo,subtotal,iva,total FROM cotizacion")
     for id_cotizacion, nit, nombre, direccion, ciudad, telefono, correo, subtotal, iva, total in cursor:
-        print("ID: " + str(id_cotizacion))
-        print("NIT: " + str(nit))
-        print("NOMBRE: " + nombre)
-        print("DIRECCIÓN: " + direccion)
-        print("CIUDAD: " + ciudad)
-        print("TELEFONO: " + str(telefono))
-        print("CORREO: " + correo)
-        print("****************************")
-        print("*SUBTOTAL: " + str(subtotal))
-        print("*IVA: " + str(iva))
-        print("*TOTAL: " + str(total))
-        print("***************************")
+        ("ID: " + str(id_cotizacion))
+
 except mariadb.Error as Error:
     print("Error: {}".format(Error))
 
